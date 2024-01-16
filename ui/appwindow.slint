@@ -36,6 +36,13 @@ export component AppWindow inherits Window {
                 on-clicked: divide-income(income.text);
             }
         }
-        VerticalBox {}
+        HorizontalLayout {
+            VerticalBox {
+                Rectangle {
+                    height: 100px;
+                    background: #f2f2f2;
+                }
+            }
+        }
     }
 }
