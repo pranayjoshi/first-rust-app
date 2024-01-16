@@ -19,7 +19,7 @@ fn main() -> Result<(), slint::PlatformError> {
         let profit = num * PROFIT;
         let opex = num * OPEXPER;
         let result = format!("args: {}\ntax: {}\nowner: {}\nprofit: {}\nopex: {}", num, tax, owner, profit, opex);
-        ui.set_result(result);
+        ui.set_result(result.into());
     });
 
     ui.run()
