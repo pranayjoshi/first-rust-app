@@ -9,7 +9,7 @@ component CalculateButton inherits Button {
 
 export component AppWindow inherits Window {
     in property <string> result: "";
-    in-out property <bool> opencurtain;
+    in-out property <bool> opencurtain: true;
     callback divide_income(string);
     background: white;
     title: "Income Tax Calculator";
@@ -63,7 +63,8 @@ export component AppWindow inherits Window {
                     }
                     Rectangle {
                         background: white;
-                        width: opencurtain ? parent.width : parent.width/2;
+                        x: opencurtain ? parent.width : parent.width/2;
+                        width: opencurtain ? 0 : parent.width/2;
                         height: parent.height;
                         animate width {
                              duration: 250ms;
