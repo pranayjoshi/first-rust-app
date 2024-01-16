@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 slint::include_modules!();
 
 const TAXPER: f64 = 0.30;
@@ -9,9 +11,14 @@ fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
 
     let ui_handle = ui.as_weak();
-    ui.on_request_increase_value(move || {
+    ui.divide_income(move |string| {
         let ui = ui_handle.unwrap();
-        ui.set_counter(ui.get_counter() + 1);
+        let num = string.parse::<f64>().unwrap();
+        let tax = num * TAXPER;
+        let owner = num * OWNERPER;
+        let profit = num * PROFIT;
+        let opex = num * OPEXPER;
+        let result = format!("args: {}\ntax: {}\nowner: {}\nprofit: {}\nopex: {}", num, tax, owner, profit, opex);
     });
 
     ui.run()
