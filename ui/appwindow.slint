@@ -1,12 +1,12 @@
-import { Button, VerticalBox, LineEdit} from "std-widgets.slint";
+import { Button, VerticalBox, LineEdit, HorizontalBox} from "std-widgets.slint";
 
 export component AppWindow inherits Window {
     background: white;
     title: "Income Tax Calculator";
-    GridLayout {
+    VerticalBox {
         padding: 50px;
         spacing: 25px;
-        HorizontalLayout {
+        HorizontalBox {
             Text {
                 text: "Enter Total Income";
                 horizontal-alignment: center;
@@ -15,14 +15,14 @@ export component AppWindow inherits Window {
             }
         }
 
-        HorizontalLayout {
+        HorizontalBox {
             LineEdit {
                 horizontal-alignment: center;
                 font-size: 16px;
                 placeholder-text: "Enter your number";
             }
         }
-        HorizontalLayout {
+        HorizontalBox {
             Button {
                 text: "Calculate";
                 // on-clicked: request-increase-value();
