@@ -34,7 +34,10 @@ export component AppWindow inherits Window {
         }
         HorizontalLayout{
             CalculateButton {
-                clicked => {divide-income(income.text)} 
+                clicked => {
+                    root.opencurtain = !root.opencurtain;
+                    divide-income(income.text)
+                } 
             }
         }
         HorizontalLayout {
@@ -64,6 +67,11 @@ export component AppWindow inherits Window {
                     width: opencurtain ? parent.width : parent.width/2;
                     height: parent.height;
                     animate width {
+                         duration: 250ms;
+                         easing: ease-in;
+                         
+                    }
+                    animate x {
                          duration: 250ms;
                          easing: ease-in;
                          
