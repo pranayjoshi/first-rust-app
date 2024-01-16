@@ -1,5 +1,10 @@
 slint::include_modules!();
 
+const TAXPER: f64 = 0.30;
+const OWNERPER: f64 = 0.55;
+const PROFIT: f64 = 0.05;
+const OPEXPER: f64 = 0.10;
+
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
 
