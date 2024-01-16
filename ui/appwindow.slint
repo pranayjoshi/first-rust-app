@@ -8,7 +8,7 @@ component CalculateButton inherits Button {
 }
 
 export component AppWindow inherits Window {
-    property <string> result: "";
+    in property <string> result: "";
     callback divide-income(int, string);
     background: white;
     title: "Income Tax Calculator";
