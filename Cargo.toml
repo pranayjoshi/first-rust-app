@@ -14,6 +14,7 @@ slint = "1.0"
 [build-dependencies]
 slint-build = "1.0"
 
-[package.metadeta.bundle]
+[package.metadata.bundle]
+
 name = "Income divider"
 identifier = "io.github.pranayjoshi.first-rust-app"
