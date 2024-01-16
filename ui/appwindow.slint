@@ -1,5 +1,12 @@
 import { Button, VerticalBox, LineEdit, HorizontalBox} from "std-widgets.slint";
 
+component CalculateButton inherits Button {
+    text: "Calculate";
+    // on-clicked: request-increase-value();
+    primary: true;
+    
+}
+
 export component AppWindow inherits Window {
     background: white;
     title: "Income Tax Calculator";
@@ -23,11 +30,7 @@ export component AppWindow inherits Window {
             }
         }
         HorizontalBox {
-            Button {
-                text: "Calculate";
-                // on-clicked: request-increase-value();
-                primary: true;
-            }
+            CalculateButton {}
         }
     }
 }
