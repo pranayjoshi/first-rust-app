@@ -8,12 +8,14 @@ component CalculateButton inherits Button {
 }
 
 export component AppWindow inherits Window {
+    property <string> name;
+    callback divide-income(int, inc);
     background: white;
     title: "Income Tax Calculator";
     VerticalBox {
         padding: 50px;
         spacing: 25px;
-        HorizontalBox {
+        HorizontalLayout {
             Text {
                 text: "Enter Total Income";
                 horizontal-alignment: center;
@@ -22,15 +24,18 @@ export component AppWindow inherits Window {
             }
         }
 
-        HorizontalBox {
-            LineEdit {
+        HorizontalLayout {
+            income := LineEdit {
                 horizontal-alignment: center;
                 font-size: 16px;
                 placeholder-text: "Enter your number";
             }
         }
-        HorizontalBox {
-            CalculateButton {}
+        HorizontalLayout{
+            CalculateButton {
+                on-clicked: divide-income(income.text);
+            }
         }
+        VerticalBox {}
     }
 }
